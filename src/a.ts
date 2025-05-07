@@ -1,7 +1,7 @@
 const x:number = 5;
 console.log(x);
 
-function greet (firstName:String){
+function greet (firstName:String|number){
     console.log("Hello "+firstName);
 }
 
@@ -11,7 +11,7 @@ function runAfter1S (fn: (name:string) => void) {
 }
 
 interface USER {
-    firstName: string,
+    firstName: string | number,
     lastName: string,
     age: number
 }
@@ -27,3 +27,15 @@ const user:USER = {
 greet(user.firstName);
 
 runAfter1S(greet);
+
+interface USER {
+    position?: string
+}
+
+type isLegalArg = number | string;
+function getId (id: isLegalArg) {
+    return id
+}
+
+console.log(getId(102));
+console.log(getId("102"));
