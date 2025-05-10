@@ -39,3 +39,21 @@ function getId (id: isLegalArg) {
 
 console.log(getId(102));
 console.log(getId("102"));
+
+// enums 
+
+enum Direction {
+    Up,
+    Right,
+    Down,
+    Left
+}
+
+function doSomething (keyPressed: Direction) {
+    if(keyPressed === Direction.Up){
+        console.log(Direction.Up)
+    }
+}
+
+doSomething(Direction.Up);
+doSomething(0);
